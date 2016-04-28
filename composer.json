@@ -1,0 +1,35 @@
+{
+  "name": "markenwerk/json-http-client",
+  "type": "library",
+  "description": "A JSON HTTP client library. This project also is the reference implementation for extending the PHP Basic HTTP Client.",
+  "keywords": [
+    "HTTP client",
+    "RESTful",
+    "JSON",
+    "SSL",
+    "Basic Auth",
+    "Client Certificate Auth"
+  ],
+  "homepage": "http://markenwerk.net/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Martin Brecht-Precht",
+      "email": "mb@markenwerk.net",
+      "homepage": "http://markenwerk.net"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "JsonHttpClient\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.3",
+    "markenwerk/basic-http-client": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.8",
+    "codeclimate/php-test-reporter": "dev-master"
+  }
+}
