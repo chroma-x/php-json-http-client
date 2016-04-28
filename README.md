@@ -104,6 +104,8 @@ Content-Length: 102
 
 The same mechanic is offered to perform `PUT` and `PATCH` requests wich all are body-full.
 
+---
+
 ### Detailed usage
 
 The following example shows the usage with a more detailed configuration. 
