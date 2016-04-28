@@ -163,7 +163,7 @@ $messageBody = new JsonBody(array(
 $message = new Message();
 $message
 	->addHeader(new Header('Content-Type', array('application/json')))
-	->addHeader(new Header('Accept', array('application/json', 'text/*')))
+	->addHeader(new Header('Accept', array('application/json')))
 	->addHeader(new Header('Runscope-Bucket-Auth', array('7a64dde7-74d5-4eed-b170-a2ab406eff08')))
 	->addCookie(new Cookie('PHPSESSID', '<MY_SESSION_ID>'))
 	->setBody($messageBody);
@@ -268,6 +268,24 @@ $clientCertificateAuthentication = new ClientCertificateAuthentication(
 $request = new JsonRequest();
 $response = $request->addAuthentication($clientCertificateAuthentication);
 ```
+
+---
+
+## Reading from the resulting Response instance
+
+TODO
+
+---
+
+## Getting effective Request information
+
+TODO
+
+---
+
+## Getting some transactional statistics
+
+TODO
 
 ---
 
