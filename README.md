@@ -198,7 +198,7 @@ use JsonHttpClient\Request\JsonRequest;
 
 // Configuring and performing a Request
 $request = new JsonRequest();
-$response = $request
+$request
 	->setUserAgent('PHP JSON HTTP Client Test 1.0')
 	->setEndpoint('https://yourapihere-com-98yq3775xff0.runscope.net/')
 	->setPort(443)
@@ -273,21 +273,82 @@ $response = $request->addAuthentication($clientCertificateAuthentication);
 
 ---
 
-## Reading from the resulting Response instance
+## Reading from the resulting Response object
 
-TODO
+### Getting the response object
+
+If using the `JsonHttpClient` the response object is returned by the termination methods listed above. If directly using the JsonRequest instance, you can get the JsonResponse object via a getter.
+
+```{php}
+// Getting the response BasicHttpClient\Response\JsonResponse object
+$response = $request->getResponse();
+
+// Reading the HTTP status code as integer; will return `200`
+echo print_r($response->getStatusCode(), true) . PHP_EOL;
+
+// Reading the HTTP status text as string; will return `HTTP/1.1 200 OK`
+echo print_r($response->getStatusText(), true) . PHP_EOL;
+
+// Reading the HTTP response headers as array of BasicHttpClient\Response\Header\Header objects
+echo print_r($response->getHeaders(), true) . PHP_EOL;
+
+// Reading the HTTP response body as associative array
+echo print_r($response->getBody(), true) . PHP_EOL;
+```
 
 ---
 
 ## Getting effective Request information
 
-TODO
+After successful performing the request, the effective request information is tracked back to the JsonRequest object. They can get accessed as follows.
+
+```{php}
+// Getting the effective endpoint URL including the query parameters
+echo print_r($request->getEffectiveEndpoint(), true) . PHP_EOL;
+
+// Getting the effective HTTP status, f.e. `POST /?paramName1=paramValue1&paramName2=paramValue2&paramName3=1&paramName4=42 HTTP/1.1`
+echo print_r($request->getEffectiveStatus(), true) . PHP_EOL;
+
+// Getting the effective raw request headers as string
+echo print_r($request->getEffectiveRawHeader(), true) . PHP_EOL;
+
+// Getting the effective request headers as array of `BasicHttpClient\Request\Message\Header\Header` objects
+echo print_r($request->getEffectiveHeaders(), true) . PHP_EOL.PHP_EOL;
+```
 
 ---
 
 ## Getting some transactional statistics
 
-TODO
+```{php}
+// Getting the statistics BasicHttpClient\Response\Statistics\Statistics object
+$statistics = $request->getResponse()->getStatistics();
+
+// Reading the redirection URL if the server responds with an redirect HTTP header and 
+// followRedirects is set to false
+echo print_r($statistics->getRedirectEndpoint(), true).PHP_EOL;
+
+// Reading the numbers of redirection as integer
+echo print_r($statistics->getRedirectCount(), true).PHP_EOL;
+
+// Getting the time in seconds the redirect utilized as float
+echo print_r($statistics->getRedirectTime(), true).PHP_EOL;
+
+// Getting the time in seconds that was utilized until the connection was established
+echo print_r($statistics->getConnectionEstablishTime(), true).PHP_EOL;
+
+// Getting the time in seconds that was utilized until the DNS hostname lookup was done
+echo print_r($statistics->getHostLookupTime(), true).PHP_EOL;
+
+// Getting the time in seconds that was utilized before the first data was sent
+echo print_r($statistics->getPreTransferTime(), true).PHP_EOL;
+
+// Getting the time in seconds that was utilized before the first data was received
+echo print_r($statistics->getStartTransferTime(), true).PHP_EOL;
+
+// Getting the time in seconds that was utilized to perfom the request an read the response
+echo print_r($statistics->getTotalTime(), true).PHP_EOL;
+```
 
 ---
 
@@ -295,6 +356,20 @@ TODO
 
 PHP JSON HTTP Client provides different exceptions – also provided by the PHP Common Exceptions project – for proper handling.  
 You can find more information about [PHP Common Exceptions at Github](https://github.com/markenwerk/php-common-exceptions).
+
+### Exceptions to be expected
+
+In general you should expect that any setter method could thrown an `\InvalidArgumentException`. The following exceptions could get thrown while using PHP Basic HTTP Client.
+
+- `CommonException\IoException\FileNotFoundException` on configuring a `ClientCertificateAuthentication`instance
+- `CommonException\IoException\FileReadableException` on configuring a `ClientCertificateAuthentication`instance
+- `BasicHttpClient\Exception\HttpRequestAuthenticationException` on performing a request
+- `BasicHttpClient\Exception\HttpRequestException` on performing a request
+- `CommonException\NetworkException\ConnectionTimeoutException` on performing a request
+- `CommonException\NetworkException\CurlException` on performing a request
+- `BasicHttpClient\Exception\HttpResponseException` if parsing the JSON response body fails
+
+---
 
 ## Contribution
 
