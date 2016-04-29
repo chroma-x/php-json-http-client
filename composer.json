@@ -26,7 +26,7 @@
   },
   "require": {
     "php": ">=5.3",
-    "markenwerk/basic-http-client": "dev-master"
+    "markenwerk/basic-http-client": "~1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.8",
