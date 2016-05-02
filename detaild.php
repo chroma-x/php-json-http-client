@@ -10,6 +10,7 @@ use BasicHttpClient\Request\Message\Message;
 use BasicHttpClient\Request\Transport\HttpsTransport;
 use JsonHttpClient\Request\Message\Body\JsonBody;
 use JsonHttpClient\Request\JsonRequest;
+use Url\Url;
 
 require_once('vendor/autoload.php');
 
@@ -40,18 +41,13 @@ $message
 	->addCookie(new Cookie('PHPSESSID', '<MY_SESSION_ID>'))
 	->setBody($messageBody);
 
+$url = new Url('https://yourapihere-com-98yq3775xff0.runscope.net/');
+
 $request = new JsonRequest();
 $response = $request
 	->setUserAgent('PHP JSON HTTP Client Test 1.0')
-	->setEndpoint('https://yourapihere-com-98yq3775xff0.runscope.net/')
-	->setPort(443)
+	->setUrl($url)
 	->addAuthentication(new BasicAuthentication('username', 'password'))
-	->setQueryParameters(
-		array(
-			'paramName1' => 'paramValue1',
-			'paramName2' => 'paramValue2'
-		)
-	)
 	->setMethod(JsonRequest::REQUEST_METHOD_POST)
 	->setTransport($transport)
 	->setMessage($message)

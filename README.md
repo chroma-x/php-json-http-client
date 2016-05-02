@@ -15,7 +15,7 @@ A JSON HTTP client library. This project also is the reference implementation fo
 ```{json}
 {
    	"require": {
-        "markenwerk/json-http-client": "~1.0"
+        "markenwerk/json-http-client": "~2.0"
     }
 }
 ```
@@ -190,25 +190,24 @@ $message->addHeader(new Header('Custom-Header', array('CustomHeaderValue')));
 $message->addAdditionalHeader(new Header('Custom-Header', array('AnotherCustomHeaderValue')));
 ```
 
-#### Configuring a Request instance and perform the HTTP request
+#### Configuring an endpoints URL, build the Request instance and perform the HTTP request
+
+For more information about the usage of the URL object please take a look at the [PHP URL Util](https://github.com/markenwerk/php-url-util) project.
 
 ```{php}
 use BasicHttpClient\Request\Authentication\BasicAuthentication;
 use JsonHttpClient\Request\JsonRequest;
+use Url\Url;
+
+// Setting up the endpoints URL
+$url = new Url('https://john:secret@yourapihere-com-98yq3775xff0.runscope.net:443/path/to/resource?arg1=123#fragment');
 
 // Configuring and performing a Request
 $request = new JsonRequest();
 $request
 	->setUserAgent('PHP JSON HTTP Client Test 1.0')
-	->setEndpoint('https://yourapihere-com-98yq3775xff0.runscope.net/')
-	->setPort(443)
+	->setUrl($url)
 	->addAuthentication(new BasicAuthentication('username', 'password'))
-	->setQueryParameters(
-		array(
-			'paramName1' => 'paramValue1',
-			'paramName2' => 'paramValue2'
-		)
-	)
 	->setMethod(JsonRequest::REQUEST_METHOD_POST)
 	->setTransport($transport)
 	->setMessage($message)
