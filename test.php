@@ -4,9 +4,9 @@ namespace Project;
 
 require_once('vendor/autoload.php');
 
-use JsonHttpClient;
-use BasicHttpClient\Request\Authentication;
-use BasicHttpClient\Request\Message;
+use Markenwerk\JsonHttpClient;
+use Markenwerk\BasicHttpClient\Request\Authentication;
+use Markenwerk\BasicHttpClient\Request\Message;
 
 // Instantiating a basic HTTP client with the endpoints URL
 // If the endpoint uses the `HTTPS` schema a `HttpsTransport` instance will be used automatically.
@@ -17,12 +17,12 @@ $client
 	->getRequest()
 	->addAuthentication(new Authentication\BasicAuthentication('username', 'password'));
 
-$response = $client->get(array(
+$client->get(array(
 	'paramName1' => 'paramValue1',
 	'paramName2' => 'paramValue2'
 ));
 
-$response = $client->post(array(
+$client->post(array(
 	'paramName1' => 'paramValue1',
 	'paramName2' => 'paramValue2',
 	'paramName3' => array(

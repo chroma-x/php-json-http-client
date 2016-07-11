@@ -2,15 +2,14 @@
 
 namespace Project;
 
-use BasicHttpClient\Request\Authentication\BasicAuthentication;
-use BasicHttpClient\Request\Authentication\ClientCertificateAuthentication;
-use BasicHttpClient\Request\Message\Cookie\Cookie;
-use BasicHttpClient\Request\Message\Header\Header;
-use BasicHttpClient\Request\Message\Message;
-use BasicHttpClient\Request\Transport\HttpsTransport;
-use JsonHttpClient\Request\Message\Body\JsonBody;
-use JsonHttpClient\Request\JsonRequest;
-use Url\Url;
+use Markenwerk\BasicHttpClient\Request\Authentication\BasicAuthentication;
+use Markenwerk\BasicHttpClient\Request\Message\Cookie\Cookie;
+use Markenwerk\BasicHttpClient\Request\Message\Header\Header;
+use Markenwerk\BasicHttpClient\Request\Message\Message;
+use Markenwerk\BasicHttpClient\Request\Transport\HttpsTransport;
+use Markenwerk\JsonHttpClient\Request\Message\Body\JsonBody;
+use Markenwerk\JsonHttpClient\Request\JsonRequest;
+use Markenwerk\UrlUtil\Url;
 
 require_once('vendor/autoload.php');
 
@@ -44,7 +43,7 @@ $message
 $url = new Url('https://yourapihere-com-98yq3775xff0.runscope.net/');
 
 $request = new JsonRequest();
-$response = $request
+$request
 	->setUserAgent('PHP JSON HTTP Client Test 1.0')
 	->setUrl($url)
 	->addAuthentication(new BasicAuthentication('username', 'password'))

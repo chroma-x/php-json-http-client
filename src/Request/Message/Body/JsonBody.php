@@ -1,14 +1,14 @@
 <?php
 
-namespace JsonHttpClient\Request\Message\Body;
+namespace Markenwerk\JsonHttpClient\Request\Message\Body;
 
-use BasicHttpClient\Exception\HttpRequestMessageException;
-use BasicHttpClient\Request\Message\Body\BodyInterface;
+use Markenwerk\BasicHttpClient\Exception\HttpRequestMessageException;
+use Markenwerk\BasicHttpClient\Request\Message\Body\BodyInterface;
 
 /**
  * Class JsonBody
  *
- * @package BasicHttpClient\Request\Message\Body
+ * @package Markenwerk\JsonHttpClient\Request\Message\Body
  */
 class JsonBody implements BodyInterface
 {

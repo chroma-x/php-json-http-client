@@ -1,15 +1,15 @@
 <?php
 
-namespace JsonHttpClient\Request;
+namespace Markenwerk\JsonHttpClient\Request;
 
-use BasicHttpClient\Request\AbstractRequest;
-use BasicHttpClient\Response\ResponseInterface;
-use JsonHttpClient\Response\JsonResponse;
+use Markenwerk\BasicHttpClient\Request\AbstractRequest;
+use Markenwerk\BasicHttpClient\Response\ResponseInterface;
+use Markenwerk\JsonHttpClient\Response\JsonResponse;
 
 /**
  * Class JsonRequest
  *
- * @package BasicHttpClient\Request
+ * @package Markenwerk\JsonHttpClient\Request
  */
 class JsonRequest extends AbstractRequest
 {

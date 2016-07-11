@@ -1,14 +1,14 @@
 <?php
 
-namespace JsonHttpClient\Response;
+namespace Markenwerk\JsonHttpClient\Response;
 
-use BasicHttpClient\Exception\HttpResponseException;
-use BasicHttpClient\Response\AbstractResponse;
+use Markenwerk\BasicHttpClient\Exception\HttpResponseException;
+use Markenwerk\BasicHttpClient\Response\AbstractResponse;
 
 /**
  * Class JsonResponse
  *
- * @package BasicHttpClient\Response
+ * @package Markenwerk\JsonHttpClient\Response
  */
 class JsonResponse extends AbstractResponse
 {
