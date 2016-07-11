@@ -118,7 +118,7 @@ use Markenwerk\BasicHttpClient\Request\Transport\HttpTransport;
 // Configuring a Transport instance
 $transport = new HttpTransport();
 $transport
-	->setHttpVersion(HttpsTransport::HTTP_VERSION_1_1)
+	->setHttpVersion(HttpTransport::HTTP_VERSION_1_1)
 	->setTimeout(5)
 	->setReuseConnection(true)
 	->setAllowCaching(true)
