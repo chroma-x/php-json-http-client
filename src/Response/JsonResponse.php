@@ -24,7 +24,7 @@ class JsonResponse extends AbstractResponse
 			parent::setBody(null);
 			return $this;
 		}
-		$body = @json_decode($body, true);
+		$body = json_decode($body, true);
 		if (is_null($body)) {
 			throw new HttpResponseException('Response data is no valid JSON string.');
 		}

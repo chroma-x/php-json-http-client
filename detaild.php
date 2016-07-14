@@ -52,4 +52,4 @@ $request
 	->setMessage($message)
 	->perform();
 
-print_r($request->getEffectiveRawHeader());
+//print_r($request->getEffectiveRawHeader());

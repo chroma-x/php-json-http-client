@@ -6,7 +6,6 @@ require_once('vendor/autoload.php');
 
 use Markenwerk\JsonHttpClient;
 use Markenwerk\BasicHttpClient\Request\Authentication;
-use Markenwerk\BasicHttpClient\Request\Message;
 
 // Instantiating a basic HTTP client with the endpoints URL
 // If the endpoint uses the `HTTPS` schema a `HttpsTransport` instance will be used automatically.
@@ -31,4 +30,4 @@ $client->post(array(
 	)
 ));
 
-print_r($client->getRequest()->getEffectiveRawHeader());
+//print_r($client->getRequest()->getEffectiveRawHeader());
