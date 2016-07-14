@@ -65,7 +65,7 @@ class JsonHttpClient implements HttpClientInterface
 	 * @throws NetworkException
 	 * @throws ConnectionTimeoutException
 	 */
-	public function get(array $queryParameters = null)
+	public function get(array $queryParameters = array())
 	{
 		$this->request
 			->setMethod(RequestInterface::REQUEST_METHOD_GET)
@@ -81,7 +81,7 @@ class JsonHttpClient implements HttpClientInterface
 	 * @throws NetworkException
 	 * @throws ConnectionTimeoutException
 	 */
-	public function head(array $queryParameters = null)
+	public function head(array $queryParameters = array())
 	{
 		$this->request
 			->setMethod(RequestInterface::REQUEST_METHOD_HEAD)
@@ -97,7 +97,7 @@ class JsonHttpClient implements HttpClientInterface
 	 * @throws NetworkException
 	 * @throws ConnectionTimeoutException
 	 */
-	public function post(array $postData = null)
+	public function post(array $postData = array())
 	{
 		$this->request
 			->getMessage()
@@ -114,7 +114,7 @@ class JsonHttpClient implements HttpClientInterface
 	 * @throws NetworkException
 	 * @throws ConnectionTimeoutException
 	 */
-	public function put(array $putData = null)
+	public function put(array $putData = array())
 	{
 		$this->request
 			->getMessage()
@@ -131,7 +131,7 @@ class JsonHttpClient implements HttpClientInterface
 	 * @throws NetworkException
 	 * @throws ConnectionTimeoutException
 	 */
-	public function patch(array $patchData = null)
+	public function patch(array $patchData = array())
 	{
 		$this->request
 			->getMessage()
@@ -148,7 +148,7 @@ class JsonHttpClient implements HttpClientInterface
 	 * @throws NetworkException
 	 * @throws ConnectionTimeoutException
 	 */
-	public function delete(array $queryParameters = null)
+	public function delete(array $queryParameters = array())
 	{
 		$this->request
 			->setMethod(RequestInterface::REQUEST_METHOD_DELETE)
