@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/markenwerk/php-json-http-client.svg?branch=master)](https://travis-ci.org/markenwerk/php-json-http-client)
 [![Test Coverage](https://codeclimate.com/github/markenwerk/php-json-http-client/badges/coverage.svg)](https://codeclimate.com/github/markenwerk/php-json-http-client/coverage)
 [![Dependency Status](https://www.versioneye.com/user/projects/5728e298a0ca35004baf7cb7/badge.svg)](https://www.versioneye.com/user/projects/5728e298a0ca35004baf7cb7)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/8d37bc23-ae48-4cc2-827e-9fa8dcc3ef39.svg)](https://insight.sensiolabs.com/projects/8d37bc23-ae48-4cc2-827e-9fa8dcc3ef39)
 [![Code Climate](https://codeclimate.com/github/markenwerk/php-json-http-client/badges/gpa.svg)](https://codeclimate.com/github/markenwerk/php-json-http-client)
 [![Latest Stable Version](https://poser.pugx.org/markenwerk/json-http-client/v/stable)](https://packagist.org/packages/markenwerk/json-http-client)
 [![Total Downloads](https://poser.pugx.org/markenwerk/json-http-client/downloads)](https://packagist.org/packages/markenwerk/json-http-client)
