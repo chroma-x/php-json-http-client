@@ -29,7 +29,7 @@
     "markenwerk/basic-http-client": "~3.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4.8",
+    "phpunit/phpunit": ">=4.8.26",
     "codeclimate/php-test-reporter": "dev-master"
   }
 }
