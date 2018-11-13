@@ -35,7 +35,7 @@ class JsonResponse extends AbstractResponse
 	/**
 	 * @return array
 	 */
-	public function getBody()
+	public function getBody(): array
 	{
 		return parent::getBody();
 	}

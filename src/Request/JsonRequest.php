@@ -17,7 +17,7 @@ class JsonRequest extends AbstractRequest
 	/**
 	 * @return ResponseInterface
 	 */
-	protected function buildResponse()
+	protected function buildResponse(): ResponseInterface
 	{
 		return new JsonResponse($this);
 	}

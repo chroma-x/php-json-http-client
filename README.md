@@ -1,8 +1,6 @@
 # PHP JSON HTTP Client
 
 [![Build Status](https://travis-ci.org/markenwerk/php-json-http-client.svg?branch=master)](https://travis-ci.org/markenwerk/php-json-http-client)
-[![Test Coverage](https://codeclimate.com/github/markenwerk/php-json-http-client/badges/coverage.svg)](https://codeclimate.com/github/markenwerk/php-json-http-client/coverage)
-[![Dependency Status](https://www.versioneye.com/user/projects/5728e298a0ca35004baf7cb7/badge.svg)](https://www.versioneye.com/user/projects/5728e298a0ca35004baf7cb7)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/6b8db506-121a-4875-8b1d-560b505e0444.svg)](https://insight.sensiolabs.com/projects/6b8db506-121a-4875-8b1d-560b505e0444)
 [![Code Climate](https://codeclimate.com/github/markenwerk/php-json-http-client/badges/gpa.svg)](https://codeclimate.com/github/markenwerk/php-json-http-client)
 [![Latest Stable Version](https://poser.pugx.org/markenwerk/json-http-client/v/stable)](https://packagist.org/packages/markenwerk/json-http-client)
