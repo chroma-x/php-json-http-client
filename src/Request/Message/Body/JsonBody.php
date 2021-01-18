@@ -1,14 +1,14 @@
 <?php
 
-namespace Markenwerk\JsonHttpClient\Request\Message\Body;
+namespace ChromaX\JsonHttpClient\Request\Message\Body;
 
-use Markenwerk\BasicHttpClient\Exception\HttpRequestMessageException;
-use Markenwerk\BasicHttpClient\Request\Message\Body\BodyInterface;
+use ChromaX\BasicHttpClient\Exception\HttpRequestMessageException;
+use ChromaX\BasicHttpClient\Request\Message\Body\BodyInterface;
 
 /**
  * Class JsonBody
  *
- * @package Markenwerk\JsonHttpClient\Request\Message\Body
+ * @package ChromaX\JsonHttpClient\Request\Message\Body
  */
 class JsonBody implements BodyInterface
 {

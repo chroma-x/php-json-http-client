@@ -1,15 +1,15 @@
 <?php
 
-namespace Markenwerk\JsonHttpClient\Request;
+namespace ChromaX\JsonHttpClient\Request;
 
-use Markenwerk\BasicHttpClient\Request\AbstractRequest;
-use Markenwerk\BasicHttpClient\Response\ResponseInterface;
-use Markenwerk\JsonHttpClient\Response\JsonResponse;
+use ChromaX\BasicHttpClient\Request\AbstractRequest;
+use ChromaX\BasicHttpClient\Response\ResponseInterface;
+use ChromaX\JsonHttpClient\Response\JsonResponse;
 
 /**
  * Class JsonRequest
  *
- * @package Markenwerk\JsonHttpClient\Request
+ * @package ChromaX\JsonHttpClient\Request
  */
 class JsonRequest extends AbstractRequest
 {

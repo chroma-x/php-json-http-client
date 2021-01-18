@@ -1,14 +1,14 @@
 <?php
 
-namespace Markenwerk\JsonHttpClient\Response;
+namespace ChromaX\JsonHttpClient\Response;
 
-use Markenwerk\BasicHttpClient\Exception\HttpResponseException;
-use Markenwerk\BasicHttpClient\Response\AbstractResponse;
+use ChromaX\BasicHttpClient\Exception\HttpResponseException;
+use ChromaX\BasicHttpClient\Response\AbstractResponse;
 
 /**
  * Class JsonResponse
  *
- * @package Markenwerk\JsonHttpClient\Response
+ * @package ChromaX\JsonHttpClient\Response
  */
 class JsonResponse extends AbstractResponse
 {

@@ -1,20 +1,20 @@
 # PHP JSON HTTP Client
 
-[![Build Status](https://travis-ci.org/markenwerk/php-json-http-client.svg?branch=master)](https://travis-ci.org/markenwerk/php-json-http-client)
+[![Build Status](https://travis-ci.org/chroma-x/php-json-http-client.svg?branch=master)](https://travis-ci.org/chroma-x/php-json-http-client)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/6b8db506-121a-4875-8b1d-560b505e0444.svg)](https://insight.sensiolabs.com/projects/6b8db506-121a-4875-8b1d-560b505e0444)
-[![Code Climate](https://codeclimate.com/github/markenwerk/php-json-http-client/badges/gpa.svg)](https://codeclimate.com/github/markenwerk/php-json-http-client)
-[![Latest Stable Version](https://poser.pugx.org/markenwerk/json-http-client/v/stable)](https://packagist.org/packages/markenwerk/json-http-client)
-[![Total Downloads](https://poser.pugx.org/markenwerk/json-http-client/downloads)](https://packagist.org/packages/markenwerk/json-http-client)
-[![License](https://poser.pugx.org/markenwerk/json-http-client/license)](https://packagist.org/packages/markenwerk/json-http-client)
+[![Code Climate](https://codeclimate.com/github/chroma-x/php-json-http-client/badges/gpa.svg)](https://codeclimate.com/github/chroma-x/php-json-http-client)
+[![Latest Stable Version](https://poser.pugx.org/chroma-x/json-http-client/v/stable)](https://packagist.org/packages/chroma-x/json-http-client)
+[![Total Downloads](https://poser.pugx.org/chroma-x/json-http-client/downloads)](https://packagist.org/packages/chroma-x/json-http-client)
+[![License](https://poser.pugx.org/chroma-x/json-http-client/license)](https://packagist.org/packages/chroma-x/json-http-client)
 
-A JSON HTTP client library. This project also is the reference implementation for extending the [PHP Basic HTTP Client](https://github.com/markenwerk/php-basic-http-client).
+A JSON HTTP client library. This project also is the reference implementation for extending the [PHP Basic HTTP Client](https://github.com/chroma-x/php-basic-http-client).
 
 ## Installation
 
 ```{json}
 {
    	"require": {
-        "markenwerk/json-http-client": "~3.0"
+        "chroma-x/json-http-client": "~3.0"
     }
 }
 ```
@@ -32,9 +32,9 @@ require_once('path/to/vendor/autoload.php');
 #### Preparing the HTTP client
 
 ```{php}
-use Markenwerk\JsonHttpClient;
-use Markenwerk\BasicHttpClient\Request\Authentication;
-use Markenwerk\BasicHttpClient\Request\Message;
+use ChromaX\JsonHttpClient;
+use ChromaX\BasicHttpClient\Request\Authentication;
+use ChromaX\BasicHttpClient\Request\Message;
 
 // Instantiating a basic HTTP client with the endpoints URL
 // If the endpoint uses the `HTTPS` schema a `HttpsTransport` instance will be used automatically.
@@ -112,7 +112,7 @@ The following example shows the usage with a more detailed configuration.
 #### Configuring a HTTP Transport instance
 
 ```{php}
-use Markenwerk\BasicHttpClient\Request\Transport\HttpTransport;
+use ChromaX\BasicHttpClient\Request\Transport\HttpTransport;
 
 // Configuring a Transport instance
 $transport = new HttpTransport();
@@ -128,7 +128,7 @@ $transport
 #### Configuring a HTTPS Transport instance
 
 ```{php}
-use Markenwerk\BasicHttpClient\Request\Transport\HttpsTransport;
+use ChromaX\BasicHttpClient\Request\Transport\HttpsTransport;
 
 // Configuring a Transport instance
 $transport = new HttpsTransport();
@@ -145,10 +145,10 @@ $transport
 #### Configuring a Message instance with Body
 
 ```{php}
-use Markenwerk\BasicHttpClient\Request\Message\Cookie\Cookie;
-use Markenwerk\BasicHttpClient\Request\Message\Header\Header;
-use Markenwerk\BasicHttpClient\Request\Message\Message;
-use Markenwerk\JsonHttpClient\Request\Message\Body\JsonBody;
+use ChromaX\BasicHttpClient\Request\Message\Cookie\Cookie;
+use ChromaX\BasicHttpClient\Request\Message\Header\Header;
+use ChromaX\BasicHttpClient\Request\Message\Message;
+use ChromaX\JsonHttpClient\Request\Message\Body\JsonBody;
 
 // Configuring a message Body instance
 $messageBody = new JsonBody(array(
@@ -191,12 +191,12 @@ $message->addAdditionalHeader(new Header('Custom-Header', array('AnotherCustomHe
 
 #### Configuring an endpoints URL, build the Request instance and perform the HTTP request
 
-For more information about the usage of the URL object please take a look at the [PHP URL Util](https://github.com/markenwerk/php-url-util) project.
+For more information about the usage of the URL object please take a look at the [PHP URL Util](https://github.com/chroma-x/php-url-util) project.
 
 ```{php}
-use Markenwerk\BasicHttpClient\Request\Authentication\BasicAuthentication;
-use Markenwerk\JsonHttpClient\Request\JsonRequest;
-use Markenwerk\UrlUtil\Url;
+use ChromaX\BasicHttpClient\Request\Authentication\BasicAuthentication;
+use ChromaX\JsonHttpClient\Request\JsonRequest;
+use ChromaX\UrlUtil\Url;
 
 // Setting up the endpoints URL
 $url = new Url('https://john:secret@yourapihere-com-98yq3775xff0.runscope.net:443/path/to/resource?arg1=123#fragment');
@@ -238,8 +238,8 @@ You can add one or more Authentication instances to every Request instance. At t
 Required credentials are a *username* and a *password* that get provided to the class constructor as arguments.
 
 ```{php}
-use Markenwerk\BasicHttpClient\Request\Authentication\BasicAuthentication;
-use Markenwerk\JsonHttpClient\Request\JsonRequest;
+use ChromaX\BasicHttpClient\Request\Authentication\BasicAuthentication;
+use ChromaX\JsonHttpClient\Request\JsonRequest;
 
 // Configuring the authentication
 $basicAuthentication = new BasicAuthentication('username', 'password');
@@ -254,8 +254,8 @@ $response = $request->addAuthentication($basicAuthentication);
 Required credentials are a *Certificate Authority Certificate*, a *Client Certificate* and the password that is used to decrypt the Client Certificate that get provided to the class constructor as arguments.
 
 ```{php}
-use Markenwerk\BasicHttpClient\Request\Authentication\ClientCertificateAuthentication;
-use Markenwerk\JsonHttpClient\Request\JsonRequest;
+use ChromaX\BasicHttpClient\Request\Authentication\ClientCertificateAuthentication;
+use ChromaX\JsonHttpClient\Request\JsonRequest;
 
 // Configuring the authentication
 $clientCertificateAuthentication = new ClientCertificateAuthentication(
@@ -278,7 +278,7 @@ $response = $request->addAuthentication($clientCertificateAuthentication);
 If using the `JsonHttpClient` the response object is returned by the termination methods listed above. If directly using the JsonRequest instance, you can get the JsonResponse object via a getter.
 
 ```{php}
-// Getting the response Markenwerk\BasicHttpClient\Response\JsonResponse object
+// Getting the response ChromaX\BasicHttpClient\Response\JsonResponse object
 $response = $request->getResponse();
 
 // Reading the HTTP status code as integer; will return `200`
@@ -287,7 +287,7 @@ echo print_r($response->getStatusCode(), true) . PHP_EOL;
 // Reading the HTTP status text as string; will return `HTTP/1.1 200 OK`
 echo print_r($response->getStatusText(), true) . PHP_EOL;
 
-// Reading the HTTP response headers as array of Markenwerk\BasicHttpClient\Response\Header\Header objects
+// Reading the HTTP response headers as array of ChromaX\BasicHttpClient\Response\Header\Header objects
 echo print_r($response->getHeaders(), true) . PHP_EOL;
 
 // Reading the HTTP response body as associative array
@@ -310,7 +310,7 @@ echo print_r($request->getEffectiveStatus(), true) . PHP_EOL;
 // Getting the effective raw request headers as string
 echo print_r($request->getEffectiveRawHeader(), true) . PHP_EOL;
 
-// Getting the effective request headers as array of `Markenwerk\BasicHttpClient\Request\Message\Header\Header` objects
+// Getting the effective request headers as array of `ChromaX\BasicHttpClient\Request\Message\Header\Header` objects
 echo print_r($request->getEffectiveHeaders(), true) . PHP_EOL.PHP_EOL;
 ```
 
@@ -319,7 +319,7 @@ echo print_r($request->getEffectiveHeaders(), true) . PHP_EOL.PHP_EOL;
 ## Getting some transactional statistics
 
 ```{php}
-// Getting the statistics Markenwerk\BasicHttpClient\Response\Statistics\Statistics object
+// Getting the statistics ChromaX\BasicHttpClient\Response\Statistics\Statistics object
 $statistics = $request->getResponse()->getStatistics();
 
 // Reading the redirection URL if the server responds with an redirect HTTP header and 
@@ -353,26 +353,26 @@ echo print_r($statistics->getTotalTime(), true).PHP_EOL;
 ## Exception handling
 
 PHP JSON HTTP Client provides different exceptions – also provided by the PHP Common Exceptions project – for proper handling.  
-You can find more information about [PHP Common Exceptions at Github](https://github.com/markenwerk/php-common-exceptions).
+You can find more information about [PHP Common Exceptions at Github](https://github.com/chroma-x/php-common-exceptions).
 
 ### Exceptions to be expected
 
 In general you should expect that any setter method could thrown an `\InvalidArgumentException`. The following exceptions could get thrown while using PHP Basic HTTP Client.
 
-- `Markenwerk\CommonException\IoException\FileNotFoundException` on configuring a `ClientCertificateAuthentication`instance
-- `Markenwerk\CommonException\IoException\FileReadableException` on configuring a `ClientCertificateAuthentication`instance
-- `Markenwerk\BasicHttpClient\Exception\HttpRequestAuthenticationException` on performing a request
-- `Markenwerk\BasicHttpClient\Exception\HttpRequestException` on performing a request
-- `Markenwerk\CommonException\NetworkException\ConnectionTimeoutException` on performing a request
-- `Markenwerk\CommonException\NetworkException\CurlException` on performing a request
-- `Markenwerk\BasicHttpClient\Exception\HttpResponseException` if parsing the JSON response body fails
+- `ChromaX\CommonException\IoException\FileNotFoundException` on configuring a `ClientCertificateAuthentication`instance
+- `ChromaX\CommonException\IoException\FileReadableException` on configuring a `ClientCertificateAuthentication`instance
+- `ChromaX\BasicHttpClient\Exception\HttpRequestAuthenticationException` on performing a request
+- `ChromaX\BasicHttpClient\Exception\HttpRequestException` on performing a request
+- `ChromaX\CommonException\NetworkException\ConnectionTimeoutException` on performing a request
+- `ChromaX\CommonException\NetworkException\CurlException` on performing a request
+- `ChromaX\BasicHttpClient\Exception\HttpResponseException` if parsing the JSON response body fails
 
 ---
 
 ## Contribution
 
 Contributing to our projects is always very appreciated.  
-**But: please follow the contribution guidelines written down in the [CONTRIBUTING.md](https://github.com/markenwerk/php-json-http-client/blob/master/CONTRIBUTING.md) document.**
+**But: please follow the contribution guidelines written down in the [CONTRIBUTING.md](https://github.com/chroma-x/php-json-http-client/blob/master/CONTRIBUTING.md) document.**
 
 ## License
 

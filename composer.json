@@ -1,5 +1,5 @@
 {
-	"name": "markenwerk/json-http-client",
+	"name": "chroma-x/json-http-client",
 	"type": "library",
 	"description": "A JSON HTTP client library. This project also is the reference implementation for extending the PHP Basic HTTP Client.",
 	"keywords": [
@@ -10,18 +10,18 @@
 		"Basic Auth",
 		"Client Certificate Auth"
 	],
-	"homepage": "http://markenwerk.net/",
+	"homepage": "http://chroma-x.de/",
 	"license": "MIT",
 	"authors": [
 		{
 			"name": "Martin Brecht-Precht",
-			"email": "mb@markenwerk.net",
-			"homepage": "http://markenwerk.net"
+			"email": "mb@chroma-x.de",
+			"homepage": "http://chroma-x.de"
 		}
 	],
 	"autoload": {
 		"psr-4": {
-			"Markenwerk\\JsonHttpClient\\": "src/"
+			"ChromaX\\JsonHttpClient\\": "src/"
 		}
 	},
 	"require": {
@@ -29,6 +29,6 @@
 		"ext-curl": "*",
 		"ext-json": "*",
 		"ext-mbstring": "*",
-		"markenwerk/basic-http-client": "~3.0"
+		"chroma-x/basic-http-client": "~3.0"
 	}
 }

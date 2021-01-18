@@ -1,24 +1,24 @@
 <?php
 
-namespace Markenwerk\JsonHttpClient;
+namespace ChromaX\JsonHttpClient;
 
-use Markenwerk\BasicHttpClient\HttpClientInterface;
-use Markenwerk\BasicHttpClient\Request\Message\Header\Header;
-use Markenwerk\BasicHttpClient\Request\RequestInterface;
-use Markenwerk\BasicHttpClient\Request\Message\Message;
-use Markenwerk\BasicHttpClient\Request\Transport\HttpsTransport;
-use Markenwerk\BasicHttpClient\Request\Transport\HttpTransport;
-use Markenwerk\BasicHttpClient\Response\ResponseInterface;
-use Markenwerk\CommonException\NetworkException\Base\NetworkException;
-use Markenwerk\CommonException\NetworkException\ConnectionTimeoutException;
-use Markenwerk\JsonHttpClient\Request\JsonRequest;
-use Markenwerk\JsonHttpClient\Request\Message\Body\JsonBody;
-use Markenwerk\UrlUtil\Url;
+use ChromaX\BasicHttpClient\HttpClientInterface;
+use ChromaX\BasicHttpClient\Request\Message\Header\Header;
+use ChromaX\BasicHttpClient\Request\RequestInterface;
+use ChromaX\BasicHttpClient\Request\Message\Message;
+use ChromaX\BasicHttpClient\Request\Transport\HttpsTransport;
+use ChromaX\BasicHttpClient\Request\Transport\HttpTransport;
+use ChromaX\BasicHttpClient\Response\ResponseInterface;
+use ChromaX\CommonException\NetworkException\Base\NetworkException;
+use ChromaX\CommonException\NetworkException\ConnectionTimeoutException;
+use ChromaX\JsonHttpClient\Request\JsonRequest;
+use ChromaX\JsonHttpClient\Request\Message\Body\JsonBody;
+use ChromaX\UrlUtil\Url;
 
 /**
  * Class JsonHttpClient
  *
- * @package Markenwerk\JsonHttpClient
+ * @package ChromaX\JsonHttpClient
  */
 class JsonHttpClient implements HttpClientInterface
 {
