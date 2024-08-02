@@ -17,6 +17,11 @@
 			"name": "Martin Brecht-Precht",
 			"email": "mb@chroma-x.de",
 			"homepage": "https://chroma-x.de"
+		},
+		{
+			"name": "Andrius Baliutis",
+			"email": "ab@chroma-x.de",
+			"homepage": "https://chroma-x.de"
 		}
 	],
 	"autoload": {
