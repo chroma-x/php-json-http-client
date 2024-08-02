@@ -22,8 +22,12 @@ class JsonBody implements BodyInterface
 		$this->bodyData = $bodyData;
 	}
 
-	public function configureCurl(\CurlHandle $curl): self
+	public function configureCurl(\CurlHandle|false $curl): self
 	{
+		if ($curl === false) {
+			throw new \TypeError('cURL is not a valid CurlHandle class.');
+		}
+
 		$jsonBody = json_encode($this->bodyData);
 		if ($jsonBody === false) {
 			throw new HttpRequestMessageException('JSON body data not serializable.');

@@ -14,7 +14,7 @@ A JSON HTTP client library. This project also is the reference implementation fo
 ```{json}
 {
    	"require": {
-        "chroma-x/json-http-client": "~3.0"
+        "chroma-x/json-http-client": "~4.0"
     }
 }
 ```
