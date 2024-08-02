@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ChromaX\JsonHttpClient\Request;
 
 use ChromaX\BasicHttpClient\Request\AbstractRequest;
@@ -14,9 +16,6 @@ use ChromaX\JsonHttpClient\Response\JsonResponse;
 class JsonRequest extends AbstractRequest
 {
 
-	/**
-	 * @return ResponseInterface
-	 */
 	protected function buildResponse(): ResponseInterface
 	{
 		return new JsonResponse($this);

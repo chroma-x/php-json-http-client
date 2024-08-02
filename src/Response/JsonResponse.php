@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ChromaX\JsonHttpClient\Response;
 
 use ChromaX\BasicHttpClient\Exception\HttpResponseException;
@@ -13,12 +15,7 @@ use ChromaX\BasicHttpClient\Response\AbstractResponse;
 class JsonResponse extends AbstractResponse
 {
 
-	/**
-	 * @param mixed $body
-	 * @return $this
-	 * @throws HttpResponseException
-	 */
-	protected function setBody($body)
+	protected function setBody(mixed $body): self
 	{
 		if ($this->getStatusCode() === 204) {
 			parent::setBody(null);
@@ -31,10 +28,7 @@ class JsonResponse extends AbstractResponse
 		parent::setBody($body);
 		return $this;
 	}
-
-	/**
-	 * @return array
-	 */
+	
 	public function getBody(): array
 	{
 		return parent::getBody();

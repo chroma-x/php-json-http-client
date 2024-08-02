@@ -10,13 +10,13 @@
 		"Basic Auth",
 		"Client Certificate Auth"
 	],
-	"homepage": "http://chroma-x.de/",
+	"homepage": "https://chroma-x.de/",
 	"license": "MIT",
 	"authors": [
 		{
 			"name": "Martin Brecht-Precht",
 			"email": "mb@chroma-x.de",
-			"homepage": "http://chroma-x.de"
+			"homepage": "https://chroma-x.de"
 		}
 	],
 	"autoload": {
@@ -25,10 +25,10 @@
 		}
 	},
 	"require": {
-		"php": "^7.1 || ^8.3",
+		"php": "^8.3",
 		"ext-curl": "*",
 		"ext-json": "*",
 		"ext-mbstring": "*",
-		"chroma-x/basic-http-client": "~3.0"
+		"chroma-x/basic-http-client": "~4.0"
 	}
 }

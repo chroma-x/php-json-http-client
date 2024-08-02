@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ChromaX\JsonHttpClient\Request\Message\Body;
 
 use ChromaX\BasicHttpClient\Exception\HttpRequestMessageException;
@@ -13,27 +15,14 @@ use ChromaX\BasicHttpClient\Request\Message\Body\BodyInterface;
 class JsonBody implements BodyInterface
 {
 
-	/**
-	 * @var array
-	 */
-	private $bodyData;
+	private array $bodyData;
 
-	/**
-	 * Body constructor.
-	 *
-	 * @param array $bodyData
-	 */
 	public function __construct(array $bodyData)
 	{
 		$this->bodyData = $bodyData;
 	}
 
-	/**
-	 * @param resource $curl
-	 * @return $this
-	 * @throws HttpRequestMessageException
-	 */
-	public function configureCurl($curl)
+	public function configureCurl(\CurlHandle $curl): self
 	{
 		$jsonBody = json_encode($this->bodyData);
 		if ($jsonBody === false) {
