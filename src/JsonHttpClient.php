@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ChromaX\JsonHttpClient;
 
 use ChromaX\BasicHttpClient\HttpClientInterface;
@@ -23,17 +25,9 @@ use ChromaX\UrlUtil\Url;
 class JsonHttpClient implements HttpClientInterface
 {
 
-	/**
-	 * @var RequestInterface
-	 */
-	private $request;
+	private RequestInterface $request;
 
-	/**
-	 * BasicHttpClient constructor.
-	 *
-	 * @param string $endpoint
-	 */
-	public function __construct($endpoint)
+	public function __construct(string $endpoint)
 	{
 		$url = new Url($endpoint);
 		$transport = new HttpTransport();
@@ -51,9 +45,6 @@ class JsonHttpClient implements HttpClientInterface
 			->setUrl($url);
 	}
 
-	/**
-	 * @return RequestInterface
-	 */
 	public function getRequest(): RequestInterface
 	{
 		return $this->request;
@@ -61,11 +52,8 @@ class JsonHttpClient implements HttpClientInterface
 
 	/**
 	 * @param string[] $queryParameters
-	 * @return ResponseInterface
-	 * @throws NetworkException
-	 * @throws ConnectionTimeoutException
 	 */
-	public function get(array $queryParameters = array()): ResponseInterface
+	public function get(array $queryParameters = []): ResponseInterface
 	{
 		$this->request
 			->setMethod(RequestInterface::REQUEST_METHOD_GET)
@@ -77,11 +65,8 @@ class JsonHttpClient implements HttpClientInterface
 
 	/**
 	 * @param string[] $queryParameters
-	 * @return ResponseInterface
-	 * @throws NetworkException
-	 * @throws ConnectionTimeoutException
 	 */
-	public function head(array $queryParameters = array()): ResponseInterface
+	public function head(array $queryParameters = []): ResponseInterface
 	{
 		$this->request
 			->setMethod(RequestInterface::REQUEST_METHOD_HEAD)
@@ -91,13 +76,7 @@ class JsonHttpClient implements HttpClientInterface
 		return $this->request->getResponse();
 	}
 
-	/**
-	 * @param array $postData
-	 * @return ResponseInterface
-	 * @throws NetworkException
-	 * @throws ConnectionTimeoutException
-	 */
-	public function post(array $postData = array()): ResponseInterface
+	public function post(array $postData = []): ResponseInterface
 	{
 		$this->request
 			->getMessage()
@@ -108,13 +87,7 @@ class JsonHttpClient implements HttpClientInterface
 		return $this->request->getResponse();
 	}
 
-	/**
-	 * @param array $putData
-	 * @return ResponseInterface
-	 * @throws NetworkException
-	 * @throws ConnectionTimeoutException
-	 */
-	public function put(array $putData = array()): ResponseInterface
+	public function put(array $putData = []): ResponseInterface
 	{
 		$this->request
 			->getMessage()
@@ -125,13 +98,7 @@ class JsonHttpClient implements HttpClientInterface
 		return $this->request->getResponse();
 	}
 
-	/**
-	 * @param array $patchData
-	 * @return ResponseInterface
-	 * @throws NetworkException
-	 * @throws ConnectionTimeoutException
-	 */
-	public function patch(array $patchData = array()): ResponseInterface
+	public function patch(array $patchData = []): ResponseInterface
 	{
 		$this->request
 			->getMessage()
@@ -142,13 +109,7 @@ class JsonHttpClient implements HttpClientInterface
 		return $this->request->getResponse();
 	}
 
-	/**
-	 * @param string[] $queryParameters
-	 * @return ResponseInterface
-	 * @throws NetworkException
-	 * @throws ConnectionTimeoutException
-	 */
-	public function delete(array $queryParameters = array()): ResponseInterface
+	public function delete(array $queryParameters = []): ResponseInterface
 	{
 		$this->request
 			->setMethod(RequestInterface::REQUEST_METHOD_DELETE)
